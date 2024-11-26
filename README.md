@@ -21,8 +21,11 @@
 # 사용방법
 사용은 직접 설치과 간접 설치으로 사용이 가능합니다.
 
-## 간접 설치
+## 간편 설치
 본 리포지토리 릴리즈에서 설치파일을 받은후 안내에 따라 설치.(난이도 쉬움)
+### 설치파일 간편설치 프로그램 서비스가 재개되었습니다!
+자세한것은 https://github.com/heon0120/New-Classcard_Auto/releases/tag/V2.0.0 를 참조하세요.
+
 
 표시되는 내용에 따라 진행하여 설치할수있습니다.(다른 패키지, 프로그램 설치 불필요)
 ### 선행조건
@@ -35,7 +38,8 @@ Kernal:Windows NT/ OS:Windows 10 32bit / 64bit 이상
 > [!Warning]
 > 설치파일은 Mac은 실행이 불가능합니다!
 
-설치파일은 추후에 제공될 예정입니다.
+## 설치파일 간편설치 프로그램 서비스가 재개되었습니다!
+자세한것은 https://github.com/heon0120/New-Classcard_Auto/releases/tag/V2.0.0 를 참조하세요.
 #### 설치파일은 아래 내용이 포함되어있습니다.
 
 * Python embedded package
@@ -46,6 +50,7 @@ Kernal:Windows NT/ OS:Windows 10 32bit / 64bit 이상
 
 * 프로그램의 과도한 실행을 막기위한 인증 프로그램
 > 직접 제작한 인증 프로그램입니다. 프로그램의 소스코드는 https://github.com/heon0120/Program-Certified-Client/blob/main/renewclient.py 를 참조하세요.
+
 
 ## 직접 설치
 본 리포지토리의 코드를 복제하여 파이썬이 설치된 환경에서 설치.(난이도 중간)
