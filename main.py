@@ -4,11 +4,11 @@ from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from handler.recall_learning import RecallLearning
-from handler.rote_learning import RoteLearning
 from handler.spelling_learning import SpellingLearning
 from selenium.webdriver.chrome.options import Options
 from handler.test_learning import TestLearning
-# 함수 불러오기
+from handler.rote_learning import RoteLearning
+# 함수불러오기
 from utility import (
     chd_wh,
     get_account,
@@ -20,9 +20,9 @@ from utility import (
 
 warnings.filterwarnings("ignore", category=DeprecationWarning)
 
-# 계정 정보 가져오기
-account = get_account()
-print("크롬 드라이브를 불러오고 있습니다. 잠시만 기다려주세요!")
+account = get_account()  # 계정 가져오기
+
+print("크롬 드라이브를 불러오고 있습니다 잠시만 기다려주세요!")
 
 # Chrome 옵션 설정
 chrome_options = Options()
@@ -36,19 +36,18 @@ driver = webdriver.Chrome(options=chrome_options)
 
 # 로그인 시행
 driver.get("https://www.classcard.net/Login")
-id_element = driver.find_element(By.ID, "login_id")
-pw_element = driver.find_element(By.ID, "login_pwd")
+id_element = driver.find_element(By.XPATH, '//*[@id="loginForm"]/div[1]/input')
+pw_element = driver.find_element(By.XPATH, '//*[@id="loginForm"]/div[1]/div/input')
+id_element.clear() # Autofill 억제
+id_element.send_keys(account["id"])
+pw_element.send_keys(account["pw"])
 
-# Autofill 억제
-id_element.clear()
-id_element.send_keys(account["id"])  # 아이디 입력
-pw_element.send_keys(account["pw"])  # 비밀번호 입력
 driver.find_element(
     By.XPATH,
-    "/html/body/div[1]/div/div/div/div/form/div[3]/a",
-).click()  # 로그인 버튼 클릭
-
+    "/html/body/div[2]/div[2]/div/div/div/form/div[3]/a",
+).click()  # 로그인 버튼
 time.sleep(1)  # 로딩 대기
+
 
 # 클래스 선택
 class_dict = {}
