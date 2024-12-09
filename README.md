@@ -53,7 +53,7 @@ Kernal:Windows NT/ OS:Windows 10 32bit / 64bit 이상
 여유 저장공간 500Mb이상
 ```
 > [!Warning]
-> 설치파일은 Mac은 실행이 불가능합니다!
+> 설치파일은 Mac에서 실행이 불가능합니다!
 
 ## 설치파일 간편설치 프로그램 서비스가 재개되었습니다!
 자세한것은 https://github.com/heon0120/New-Classcard_Auto/releases/tag/V2.0.0 를 참조하세요.
