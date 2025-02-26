@@ -36,16 +36,18 @@ driver = webdriver.Chrome(options=chrome_options)
 
 # 로그인 시행
 driver.get("https://www.classcard.net/Login")
-id_element = driver.find_element(By.XPATH, '//*[@id="loginForm"]/div[1]/input')
-pw_element = driver.find_element(By.XPATH, '//*[@id="loginForm"]/div[1]/div/input')
-id_element.clear() # Autofill 억제
-id_element.send_keys(account["id"])
-pw_element.send_keys(account["pw"])
+id_element = driver.find_element(By.XPATH, '/html/body/div[2]/div[3]/div/div/div/form/div[1]/input')
+pw_element = driver.find_element(By.XPATH, '/html/body/div[2]/div[3]/div/div/div/form/div[1]/div/input')
 
+# Autofill 억제
+id_element.clear()
+id_element.send_keys(account["id"])  # 아이디 입력
+pw_element.send_keys(account["pw"])  # 비밀번호 입력
 driver.find_element(
     By.XPATH,
-    "/html/body/div[2]/div[2]/div/div/div/form/div[3]/a",
+    "/html/body/div[2]/div[3]/div/div/div/form/div[3]/a", # XPATH 수정 div[2] -> div[3]
 ).click()  # 로그인 버튼
+
 time.sleep(1)  # 로딩 대기
 
 
